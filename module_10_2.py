@@ -17,7 +17,10 @@ class Knight(Thread):  # класс Knight, содержащий два мето
             enemies -= self.power  # В процессе сражения количество врагов уменьшается на power текущего рыцаря
             sleep(1)
             number_of_days += 1  # счетчик дней, который увеличивается на один
-            print(f"{self.name} сражается {number_of_days} день(дня).., осталось {enemies} воинов.")  # ежедневный вывод
+            if enemies < 0:
+                print(f"{self.name} сражается {number_of_days} день(дня).., осталось 0 воинов.")
+            else:
+                print(f"{self.name} сражается {number_of_days} день(дня).., осталось {enemies} воинов.")  # ежедневный вывод
         print(f"{self.name} одержал победу спустя {number_of_days} дней(дня)!")  # итоговый вывод
 
 
